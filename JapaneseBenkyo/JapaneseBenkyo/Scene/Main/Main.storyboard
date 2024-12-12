@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -23,9 +24,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="fOZ-HW-5Ou">
-                                <rect key="frame" x="0.0" y="117.66666666666669" width="393" height="734.33333333333326"/>
+                                <rect key="frame" x="0.0" y="117.66666666666669" width="393" height="650.33333333333326"/>
                                 <sections/>
                             </tableView>
+                            <view contentMode="scaleToFill" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="50" restorationIdentifier="GADBannerView" translatesAutoresizingMaskIntoConstraints="NO" id="u6l-Xw-oUF" customClass="GADBannerView">
+                                <rect key="frame" x="36.666666666666657" y="768" width="320" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -33,12 +38,15 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="fOZ-HW-5Ou" secondAttribute="trailing" id="5vQ-1b-OGx"/>
                             <constraint firstItem="RMD-oc-o3K" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="LS7-sh-a37"/>
                             <constraint firstItem="fOZ-HW-5Ou" firstAttribute="top" secondItem="RMD-oc-o3K" secondAttribute="bottom" constant="16" id="Mbe-ae-SWE"/>
-                            <constraint firstAttribute="bottom" secondItem="fOZ-HW-5Ou" secondAttribute="bottom" id="h4Z-tI-Nyt"/>
+                            <constraint firstItem="u6l-Xw-oUF" firstAttribute="top" secondItem="fOZ-HW-5Ou" secondAttribute="bottom" id="VDY-ho-wjd"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="u6l-Xw-oUF" secondAttribute="bottom" id="feT-Lw-nlv"/>
                             <constraint firstItem="fOZ-HW-5Ou" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="kTF-zP-5zT"/>
                             <constraint firstItem="RMD-oc-o3K" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="8" id="q0f-zX-2sk"/>
+                            <constraint firstItem="u6l-Xw-oUF" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="zB3-lL-NCf"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bannerView" destination="u6l-Xw-oUF" id="nsj-bd-7hK"/>
                         <outlet property="tableView" destination="fOZ-HW-5Ou" id="0QW-9f-3dE"/>
                     </connections>
                 </viewController>

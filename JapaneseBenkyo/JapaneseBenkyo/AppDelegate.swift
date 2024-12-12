@@ -7,6 +7,7 @@
 
 import UIKit
 import AVFoundation
+import GoogleMobileAds
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate, UIGestureRecognizerDelegate {
@@ -43,6 +44,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UIGestureRecognizerDelega
                 print("Error : \(error), \(error.userInfo)")
             }
         }
+        GADMobileAds.sharedInstance().start(completionHandler: nil)
         
         // Temp =============================================
         let processKeyDiff: [(String, String)] = [
